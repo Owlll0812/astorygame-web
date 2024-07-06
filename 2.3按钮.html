@@ -1,0 +1,280 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>2.3房间</title>  
+    
+    <style>  
+    	body {
+            background-color: rgb(255, 250, 250);
+        }
+        /* 模态弹窗的样式 */  
+        .modal {  
+            display: none; /* 默认隐藏 */  
+            position: fixed; /* 固定在屏幕上 */  
+            z-index: 1; /* 始终在最上层 */  
+            left: 0;  
+            top: 0;  
+            width: 100%; /* 全屏宽度 */  
+            height: 100%; /* 全屏高度 */  
+            overflow: auto; /* 允许滚动 */  
+            background-color: rgba(0,0,0,0.4); /* 黑色背景，半透明 */  
+        }  
+  
+        /* 模态弹窗内容 */  
+        .modal-content {  
+            background-color: #fefefe;  
+            margin: 15% auto; /* 15% 从顶部开始，水平居中 */  
+            padding: 20px;  
+            border: 1px solid #888;  
+            width: 80%; /* 宽度可以是 80% */  
+        }  
+  
+        /* 关闭按钮的样式 */  
+        .close {  
+            color: #aaa;  
+            float: right;  
+            font-size: 28px;  
+            font-weight: bold;  
+            cursor: pointer;  
+        }  
+  
+        .close:hover,  
+        .close:focus {  
+            color: black;  
+            text-decoration: none;  
+            cursor: pointer;  
+        }  
+        
+        
+        /* 自定义模态弹窗的样式 */  
+    .modal1 {  
+        display: none;  
+        position: fixed;  
+        z-index: 1;  
+        left: 0;  
+        top: 0;  
+        width: 100%;  
+        height: 100%;  
+        overflow: auto;  
+        background-color: rgba(0, 0, 0, 0.4);  
+    }  
+  
+    .modal1-content {  
+        background-color: #fefefe;  
+        margin: 15% auto;  
+        padding: 20px;  
+        border: 1px solid #888;  
+        width: 80%;  
+    }  
+  
+    .close1 {  
+        color: #aaa;  
+        float: right;  
+        font-size: 28px;  
+        font-weight: bold;  
+        cursor: pointer;  
+    }  
+  
+    .close1:hover,  
+    .close1:focus {  
+        color: black;  
+        text-decoration: none;  
+        cursor: pointer;  
+    } 
+    
+    
+    </style> 
+</head>  
+<body>  
+  <button onclick="showModal()">点我</button>  
+<table id="myTable" border="1">  
+    <thead>  
+        <tr>  
+            <th>/////</th>  
+            <th>A</th>  
+            <th>B</th>
+            <th>C</th>  
+            <th>D</th>
+            
+        </tr>  
+    </thead>  
+    <tbody>  
+        <!-- 假设这里有一些已经存在的行 -->  
+        <tr>  
+            <td>1</td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+  
+            
+        </tr>  
+        <tr>  
+            <td>2</td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+        
+            
+        </tr>
+        <tr>  
+            <td>3</td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+          
+            
+        </tr>
+        <tr>  
+            <td>4</td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+      
+            
+        </tr>
+        <tr>  
+            <td>5</td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>  
+            <td><button class="removable-button" onclick="removeButton(this)">click</button></td>
+         
+            
+        </tr>
+        <!-- ... 其他行 ... -->  
+    </tbody>  
+</table>  
+  
+  <button id="refreshButton">刷新</button>
+  
+  <button id="tishi">提示</button>
+<!-- 注意：这里没有“恢复”按钮的示例，因为每个按钮都是单独处理的 -->  
+
+<!-- 模态弹窗的结构 -->  
+<div id="myModal1" class="modal1">  
+    <div class="modal1-content">  
+        <span class="close1" onclick="closeModal1()">&times;</span>  
+        <p>请继续接下来您的操作</p>  
+        <button onclick="confirmAction1()">继续</button>  
+        <button onclick="cancelAction1()">再想想</button>  
+    </div>  
+</div> 
+
+  
+<script>  
+    // 点击按钮后隐藏该按钮的函数  
+    function removeButton(button) {  
+        button.style.display = 'none'; // 将按钮的display属性设置为none，使其消失  
+    }  
+    
+    // 刷新按钮的点击事件监听器  
+    document.getElementById('refreshButton').addEventListener('click', function() {  
+        location.reload(); // 刷新当前页面  
+    });  
+    
+    document.getElementById('tishi').addEventListener('click', function() {  
+    	alert('你环顾四周，发现病房号码为三位数。');
+       alert('根据这个表格和照片背后的标记，将不要的按钮消除掉吧！'); 
+       alert('注意：\n 第一串标记：A24-B24-C24 \n 第二串标记：B234-C234 \n 第三串标记：A4-B24-C24-D2');
+    }); 
+    
+    
+    
+  
+  
+    // 如果你想要添加一个“恢复”所有按钮的功能，你可以使用类似下面的逻辑（但这里不直接实现）：  
+    // 1. 跟踪哪些按钮被隐藏了（可能需要一个数组或集合来存储它们）  
+    // 2. 编写一个函数来遍历这个集合，并将每个按钮的display属性设置回'inline-block'或其他适当的值  
+    
+    
+     // 显示模态弹窗  
+    function showModal() {  
+        alert("一股强烈的直觉指示你前去你所在的病房看看。"); // 首先显示一个简单的alert弹窗
+        alert("可是病历上的所在病房号被涂抹掉了，");
+        alert("病历后面夹着一张照片，");
+        alert("照片上是年轻的你和一只狗的合照，");
+        alert("你的狗——德克。");
+        alert("“怎么会有我和德克的合照？”");
+        alert("你翻看照片发现，\n照片的背面写着三串奇怪的标记，");
+        alert("第一串标记：A24-B24-C24");
+        alert("第二串标记：B234-C234");
+        alert("第三串标记：A4-B24-C24-D2");
+        alert("<如果没有头绪，点击提示吧~>");
+        
+        
+        
+        showCustomModal1(); // 用户点击OK后显示自定义模态弹窗  
+    }  
+  
+    // 显示自定义模态弹窗  
+    function showCustomModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "block"; // 显示模态弹窗  
+    }  
+  
+    // 隐藏自定义模态弹窗  
+    function closeModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "none"; // 隐藏模态弹窗  
+    }  
+  
+    // 确认操作  
+    function confirmAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+        
+        
+        // 在这里执行确认后的操作  
+        // 输入用户名和密码，如果正确给出弹出框提示“登陆成功”，如果不对或用户取消，停止弹出  
+			var userName;  
+			do {  
+				userName = prompt('请输入你要去的病房号');  
+				if (userName === null) break; // 如果用户取消，退出循环  
+				  
+				
+				// 用户名或密码不正确时继续循环  
+			} while (userName !== "305" );  
+			  
+			// 如果循环结束（即用户名和密码正确或用户取消），则显示相应的消息  
+			if (userName === "305") {  
+				alert('你推开病历上的那间病房房门，');  
+				window.location.href = '2.4.html'; // 跳转到c页面
+			} else {  
+				alert('再想想病房号是什么吧。');  
+			}  
+    }  
+  
+    // 取消操作  
+    function cancelAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+         alert('再想想吧'); 
+         
+        // 在这里执行取消后的操作  
+    }  
+  
+    // 获取窗口点击事件，用于处理点击模态弹窗外部区域时关闭弹窗的逻辑  
+    window.onclick = function(event) {  
+        if (event.target == document.getElementById("myModal1")) {  
+            closeModal1();  
+        }  
+    };  
+  
+    // 为了防止点击模态弹窗内部时关闭弹窗，需要阻止事件冒泡到window对象  
+    document.getElementById("myModal1").onclick = function(event) {  
+        event.stopPropagation();  
+    }  
+  
+    // 为关闭按钮（如果有的话）添加点击事件监听器  
+    var span1 = document.getElementsByClassName("close1")[0];  
+    span1.onclick = function() {  
+        closeModal1();  
+    }  
+</script>  
+  
+</body>  
+</html>

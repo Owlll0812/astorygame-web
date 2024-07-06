@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4.1终章</title>
+		
+		<style>  
+			body {
+            background-color:  rgb(39, 35, 35);;
+        }
+        /* 模态弹窗的样式 */  
+        .modal {  
+            display: none; /* 默认隐藏 */  
+            position: fixed; /* 固定在屏幕上 */  
+            z-index: 1; /* 始终在最上层 */  
+            left: 0;  
+            top: 0;  
+            width: 100%; /* 全屏宽度 */  
+            height: 100%; /* 全屏高度 */  
+            overflow: auto; /* 允许滚动 */  
+            background-color: rgba(0,0,0,0.4); /* 黑色背景，半透明 */  
+        }  
+  
+        /* 模态弹窗内容 */  
+        .modal-content {  
+            background-color: #fefefe;  
+            margin: 15% auto; /* 15% 从顶部开始，水平居中 */  
+            padding: 20px;  
+            border: 1px solid #888;  
+            width: 80%; /* 宽度可以是 80% */  
+        }  
+  
+        /* 关闭按钮的样式 */  
+        .close {  
+            color: #aaa;  
+            float: right;  
+            font-size: 28px;  
+            font-weight: bold;  
+            cursor: pointer;  
+        }  
+  
+        .close:hover,  
+        .close:focus {  
+            color: black;  
+            text-decoration: none;  
+            cursor: pointer;  
+        }  
+        
+        
+        /* 自定义模态弹窗的样式 */  
+    .modal1 {  
+        display: none;  
+        position: fixed;  
+        z-index: 1;  
+        left: 0;  
+        top: 0;  
+        width: 100%;  
+        height: 100%;  
+        overflow: auto;  
+        background-color: rgba(0, 0, 0, 0.4);  
+    }  
+  
+    .modal1-content {  
+        background-color: #fefefe;  
+        margin: 15% auto;  
+        padding: 20px;  
+        border: 1px solid #888;  
+        width: 80%;  
+    }  
+  
+    .close1 {  
+        color: #aaa;  
+        float: right;  
+        font-size: 28px;  
+        font-weight: bold;  
+        cursor: pointer;  
+    }  
+  
+    .close1:hover,  
+    .close1:focus {  
+        color: black;  
+        text-decoration: none;  
+        cursor: pointer;  
+    } 
+    
+    
+    </style> 
+    
+    
+	</head>
+	<body>
+		
+		<button id="dianwo" onclick="showModal()">点我</button>
+		
+		
+		<div id="myModal1" class="modal1">  
+    <div class="modal1-content">  
+        <span class="close1" onclick="closeModal1()">&times;</span>  
+        <p>您要返回目录吗？</p>  
+        <button onclick="confirmAction1()">返回目录</button>  
+        
+    </div>  
+</div> 
+
+		<script>
+			function showModal() {   
+    	alert('我走出了那个令人伤心的地方。');
+       alert('雨已停下，夕阳已至。'); 
+       alert('大门不远处，我遇见了一个老人，');
+       alert('与"青春"不同，他是满头白发，\n今天他跟我一样身着黑衣，手持雨伞一把。');
+       alert('我们二人对视良久，我并不清楚这位老人是谁，');
+       alert('但是相同的衣服，相同的伞，与我相似的面容，都让我隐约有个答案——');
+       alert('——他就是我。');
+       alert('老人先打破了沉默：“小伙子，今天的夕阳格外得美，你觉得呢？”');
+       alert('我看着与平时无二的夕阳，又看了看老人，\n我想他大概说的是这个年纪的他依旧很好。');
+       alert('“是啊，比中午下雨的时候好多了，一眨眼就到傍晚了。”我回答。');
+       alert('老人问我怎么这个时候出来。');
+       alert('我说：“出来找狗。”');
+       alert('忽然，我看见老人身后的那只大狗，这只狗好像是德克？');
+       alert('注意到我在看它，那只大狗朝我小跑过来，亲昵地蹭了蹭我的裤脚，\n相同的毛色，我确定它就是我的宠物。');
+       alert('“瞧，它自己跑回来了。”我些许心虚地向面前的自己补充道。');
+       alert('德克又回头跑到老人那蹭了蹭他的裤脚。');
+       alert('“看来这狗也是喜欢我的。”\n老人疼惜的看着这只大东西，又蹲下身子宠溺的抚摸它的背脊。');
+       alert('老人没有揭穿我，这个动作持续了几秒后，他起身跟我说他要走了，');
+       alert('“有机会会再见到的。”他耸耸肩，又继续慢悠悠的向前走......');
+       alert('......');
+       alert('......');
+       alert('“一定会再见的。”我想。');
+       alert('回过神来，我向德克摆摆手，笑着示意它跟上我：“德克，快跟上。”');
+       alert('一人一狗，朝着那个方向又继续向前......');
+       alert('一起消失在夕阳的尽头。');
+       alert('<__完__>');
+       alert('故事完结了，返回目录吧！');
+       showCustomModal1();
+       
+    };
+    
+    
+    // 显示自定义模态弹窗  
+    function showCustomModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "block"; // 显示模态弹窗  
+    }  
+  
+    // 隐藏自定义模态弹窗  
+    function closeModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "none"; // 隐藏模态弹窗  
+    }  
+  
+    // 确认操作  
+    function confirmAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+        
+        // 在这里执行确认后的操作  
+        window.location.href = '目录页面.html'; // 跳转到c页面  
+    }  
+  
+    
+  
+    // 获取窗口点击事件，用于处理点击模态弹窗外部区域时关闭弹窗的逻辑  
+    window.onclick = function(event) {  
+        if (event.target == document.getElementById("myModal1")) {  
+            closeModal1();  
+        }  
+    };  
+  
+    // 为了防止点击模态弹窗内部时关闭弹窗，需要阻止事件冒泡到window对象  
+    document.getElementById("myModal1").onclick = function(event) {  
+        event.stopPropagation();  
+    }  
+  
+    // 为关闭按钮（如果有的话）添加点击事件监听器  
+    var span1 = document.getElementsByClassName("close1")[0];  
+    span1.onclick = function() {  
+        closeModal1();  
+    }  
+		</script>
+	</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>3.2德克</title>  
+    <style>  
+        body, html {  
+            height: 100%;  
+            margin: 0;  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+            justify-content: center;  
+            background-color: darkgray;  
+        }  
+  
+        .text-container {  
+            position: relative;  
+            opacity: 0;  
+            transition: opacity 1s ease-in-out;  
+            text-align: center;  
+            margin-bottom: 20px; /* 间距 */  
+        }  
+  
+        .text-container.show {  
+            opacity: 1;  
+        }  
+  
+        /* 第一个div的样式（如果需要的话） */  
+        #div1 {  
+            /* 可以添加额外的样式 */  
+        }  
+  
+        /* 第二个div的样式（如果需要的话） */  
+        #div2 {  
+            /* 可以添加额外的样式 */  
+        }  
+    </style>  
+</head>  
+<body>  
+  
+<!-- 创建两个用于显示文本的div -->  
+<div class="text-container" id="div1">但你不能再等了，我要去找我的主人。</div>  
+<div class="text-container" id="div2">你漫无目的地走着，这里似乎是个公园。</div>
+<div class="text-container" id="div3">在这寻找一段时间，找到了一个玩具飞盘，</div>  
+<div class="text-container" id="div4">想起了自己与小时候的主人在草地上玩耍的时光。</div>
+<div class="text-container" id="div5">场景转换瞬间变得扭曲起来，你置身于一间房间里，</div>  
+<div class="text-container" id="div6">房间里很熟悉——主人的房间。</div>
+<div class="text-container" id="div7">你在房间的角落里找到了一张带有狗爪印的纸，这好像是自己日记？</div>  
+<div class="text-container" id="div8">主人的房间里都是岁月的痕迹，你发现你已经陪伴主人很久，</div>
+<div class="text-container" id="div9">从看到他小小的身体慢慢成长，然后带着心爱的人生活。</div>  
+<div class="text-container" id="div10">而你自己，作为主人唯一的宠物，也在逐渐长大，懂事，变老......</div>
+<div class="text-container" id="div11">你很开心这里是主人的房间，这样不就是回到家了吗。</div>  
+<div class="text-container" id="div12">可是场景又扭曲起来，雨声拍打在你绒毛上，凉飕飕的。</div>
+<div class="text-container" id="div13">这里不是公园也不是家门口，</div>  
+<div class="text-container" id="div14">但你仍然有种使命感，主人好像回来到这里，这是直觉。</div>
+<div class="text-container" id="div15">雨还在下，你甩了甩身上积满的水滴。</div>  
+<div class="text-container" id="div16">“应该要准备好雨伞，不然我那个健忘的主人肯定又忘了拿伞。”你这样想。</div>
+<div class="text-container" id="div17"> <button id="myButton">点击我</button></div>
+<script>  
+    // 获取两个div的引用  
+    var div1 = document.getElementById('div1');  
+    var div2 = document.getElementById('div2');  
+    var div3 = document.getElementById('div3');  
+    var div4 = document.getElementById('div4');
+    var div5 = document.getElementById('div5');  
+    var div6 = document.getElementById('div6');
+    var div7 = document.getElementById('div7');
+    var div8 = document.getElementById('div8');  
+    var div9 = document.getElementById('div9');  
+    var div10 = document.getElementById('div10');  
+    var div11 = document.getElementById('div11');
+    var div12 = document.getElementById('div12');  
+    var div13 = document.getElementById('div13');
+    var div14 = document.getElementById('div14');
+    var div15 = document.getElementById('div15');  
+    var div16 = document.getElementById('div16');
+    var div17 = document.getElementById('div17');
+    var isClicked = false; // 用来标记是否点击过  
+
+  
+    // 为整个文档添加点击事件监听器  
+    document.addEventListener('click', function(event) {  
+        // 如果已经点击过，则不再处理点击事件  
+        if (isClicked) return;  
+  
+        // 显示第一个div  
+        div1.classList.add('show');  
+  
+        // 延迟一段时间后显示第二个div  
+        setTimeout(function() {  
+            div2.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 500);   
+        
+        setTimeout(function() {
+            div3.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 1000); 
+         setTimeout(function() {  
+            div4.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 1500);   
+        
+        setTimeout(function() {
+            div5.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 2000);  setTimeout(function() {  
+            div6.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 2500);   
+        
+        setTimeout(function() {
+            div7.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 3000); 
+         setTimeout(function() {  
+            div8.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 3500);   
+        
+        setTimeout(function() {
+            div9.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 4000); 
+         setTimeout(function() {  
+            div10.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 4500);   
+        
+        setTimeout(function() {
+            div11.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 5000);  setTimeout(function() {  
+            div12.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 5500);   
+        
+        setTimeout(function() {
+            div13.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 6000); 
+         setTimeout(function() {  
+            div14.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 6500);   
+        
+        setTimeout(function() {
+            div15.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 7000); 
+         setTimeout(function() {  
+            div16.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 7500);   
+        
+        setTimeout(function() {
+            div17.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 8000); 
+    });  
+    
+    
+</script>  
+
+    
+<script>
+// 在这里编写 JavaScript 代码
+document.addEventListener('DOMContentLoaded', function () {
+    // 获取按钮元素
+    var button = document.getElementById('myButton');
+
+    // 为按钮绑定点击事件
+    button.addEventListener('click', function () {
+        // 当按钮被点击时，在控制台中打印一条消息
+        var name = prompt('现在要找什么？')
+        if (name=='雨伞') {
+        	window.location.href = '3.3.html';
+        } else{
+        	alert("主人会感冒的！")
+        }
+        
+    });
+});
+</script>
+		
+
+</body>  
+</html>

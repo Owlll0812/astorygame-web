@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>拿花参加追悼会</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      border: none;
+      padding: 0;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      border: 8px solid white;
+      border-radius: 30px;
+      background-color: black;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .main h1,
+    .main p {
+      position: relative;
+      font-size: 36px;
+      max-width: 60%;
+      color: #194a73;
+      background-color: white;
+      padding: 20px;
+      border-radius: 22px 0 0 22px;
+    }
+
+    .main h1:before,
+    .main h1:after,
+    .main p:before,
+    .main p:after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 30px;
+      width: 30px;
+      right: 0;
+      background-size: cover;
+    }
+
+    .main h1:before,
+    .main p:before {
+      top: -30px;
+      background-color: black;
+    }
+
+    .main h1:after,
+    .main p:after {
+      bottom: -30px;
+      background-color: black;
+    }
+
+    .main p {
+      font-size: 20px;
+      margin-top: 60px;
+    }
+
+    .button-container {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    .question-container {
+    	
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .question {
+      font-size: 28px;
+      color: #194a73;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .options {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .options img {
+      margin: 10px;
+      cursor: pointer;
+      border: 5px solid transparent;
+      border-radius: 10px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      width: 150px; /* 控制图片宽度 */
+      height: 150px; /* 控制图片高度 */
+    }
+
+    .options img:hover {
+      transform: scale(1.1);
+      border-color: #194a73;
+    }
+
+    .result {
+      display: none;
+      font-size: 24px;
+      color: red;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <script>
+    window.console = window.console || function(t) {};
+
+    function showQuestion() {
+      document.getElementById('question-container').style.display = 'flex';
+    }
+
+    function checkAnswer(answer) {
+      if (answer === 'yellow') {
+        window.location.href = '1.4来到追悼会.html'; 
+      } else {
+        document.getElementById('result').style.display = 'block';
+        setTimeout(function() {
+          location.reload();
+        }, 2000);
+      }
+    }
+  </script>
+
+</head>
+
+<body translate="no">
+  <section class="main">
+    <h1>着急去见老朋友的你已经不管那么多了<br>但是，在去追悼会之前<br>总不能两手空空去的吧......</h1>
+    <p>黄菊似乎是不错的选择？</p>
+    <div class="button-container">
+      <button onclick="showQuestion()" >点击继续</button>
+    </div>
+    <div id="question-container" class="question-container">
+      <div class="question">
+        所以我该选择哪种花呢？
+      </div>
+      <div class="options">
+        <img src="img/黄菊.jpg" alt="黄菊" onclick="checkAnswer('yellow')">
+        <img src="img/橙花.jpg" alt="橙花" onclick="checkAnswer('orange')">
+        <img src="img/紫花.jpg" alt="紫花" onclick="checkAnswer('purple')">
+      </div>
+    </div>
+    <div id="result" class="result">
+    	你死了
+    </div>
+  </section>
+</body>
+</html>

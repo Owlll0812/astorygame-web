@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background: #000032;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .centered-button {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      background-color: #FF4D00;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+</head>
+
+<body translate="no">
+  <svg viewBox="0 0 100 100">
+    <radialGradient id="grad" cx="0.5" cy="0.065" r="1.1" fx="0.5" fy="0.25" fr="4%">
+      <stop offset="10%" stop-color="#FF3EE8" />
+      <stop offset="40%" stop-color="#FF3B75" />
+      <stop offset="60%" stop-color="#FF4D00" />
+      <stop offset="75%" stop-color="#FF9600" />
+      <stop offset="100%" stop-color="#FFD300" />
+    </radialGradient>
+    <g fill="url(#grad)" stroke="url(#grad)">
+      <path d="M0 0 M 4 50 l90 5 l-85 5 l70 5 l-60 5 l50 5 l-40 5 l30 5l-20 5l0 0l 0 0" fill="none" stroke="url(#grad)"
+        stroke-linejoin="round" stroke-linecap="round" stroke-width="6">
+        <animate attributeName="d"
+          values="M0 0 M 4 50 l90 5 l-85 5 l70 5 l-60 5 l50 5 l-40 5 l30 5l-20 5l0 0l 0 0; M0 0 M4 50 l92 0 l-90 5 l85 5 l-70 5 l60 5 l-50 5 l40 5 l-30 5 l20 5 l0 0; M0 0 M4 50 l90 0 l-90 0 l90 5 l-85 5 l70 5 l-60 5 l50 5 l-40 5 l30 5 l-20 5"
+          dur="5s" begin="0s" repeatCount="indefinite" />
+      </path>
+      <path d="M0 0M4 50A1 1 0 0196 50zM0 90" stroke-linejoin="round" stroke-linecap="round" stroke-width="6" />
+    </g>
+  </svg>
+
+  <button class="centered-button" onclick="window.location.href='目录页面.html'">点击结束故事</button>
+</body>
+
+</html>

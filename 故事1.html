@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/故事1.css" />
+		<link rel="stylesheet" href="css/故事1-signup.css" />
+		<script type="text/javascript">
+        window.onload = function() {
+            alert("你收到了一份来自老朋友Q的信——输入你的身份来打开他的追悼会邀请函。");
+        }
+    </script>
+	</head>
+	<body>
+		<div class="ring">
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="login">
+    <h2>Welcome back, Dr.W</h2>
+    <div class="inputBx">
+      <input type="text" id="username" placeholder="Username">
+    </div>
+    <div class="inputBx">
+      <input type="password"  id="password"  placeholder="Password">
+    </div>
+    <div class="inputBx">
+      <input type="submit" value="Sign in" onclick="validateForm()">
+    </div>
+    <div class="links">
+      <a href="#" onclick="showCustomAlert('博士，你自己设的密码是知道的')">Forget Password</a>
+      <a href="#" onclick="showCustomAlert('博士，你不要调皮了，你是唯一独一无二的用户')">Signup</a>
+    </div>
+  </div>
+</div>
+<div id="customAlertOverlay" class="custom-alert-overlay"></div>
+<div id="customAlert" class="custom-alert">
+        <p></p>
+        <button onclick="hideCustomAlert()">确定</button>
+    </div>
+    
+<script type="text/javascript">
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            console.log("Username: " + username); // 调试信息
+            console.log("Password: " + password); // 调试信息
+
+            if (username !== "W") {
+                alert("该用户不存在");
+                return false;
+            } else {
+                if (password === "") {
+                    password = prompt("请输入密码");
+                }
+                if (password === "zhidaode") {
+                    alert("登录成功");
+                    console.log("Login successful, redirecting..."); // 调试信息
+                    window.location.href = "1.1邀请函.html";
+                } else {
+                    alert("密码不正确");
+                    alert("博士，你好像忘记了自己密码。");
+                    return false;
+                }
+            }
+            return true;
+        }
+        function showCustomAlert(message) {
+            var alertBox = document.getElementById('customAlert');
+            alertBox.querySelector('p').textContent = message;
+            alertBox.style.display = 'block';
+            document.getElementById('customAlertOverlay').style.display = 'block';
+        }
+
+        function hideCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+            document.getElementById('customAlertOverlay').style.display = 'none';
+        }
+    </script>
+	</body>
+</html>

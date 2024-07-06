@@ -1,0 +1,195 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>2.1医院</title>  
+    <style>  
+    	body {
+            background-color: rgb(255, 250, 250);
+        }
+    	
+        /* 模态弹窗的样式 */  
+        .modal {  
+            display: none; /* 默认隐藏 */  
+            position: fixed; /* 固定在屏幕上 */  
+            z-index: 1; /* 始终在最上层 */  
+            left: 0;  
+            top: 0;  
+            width: 100%; /* 全屏宽度 */  
+            height: 100%; /* 全屏高度 */  
+            overflow: auto; /* 允许滚动 */  
+            background-color: rgba(0,0,0,0.4); /* 黑色背景，半透明 */  
+        }  
+  
+        /* 模态弹窗内容 */  
+        .modal-content {  
+            background-color: #fefefe;  
+            margin: 15% auto; /* 15% 从顶部开始，水平居中 */  
+            padding: 20px;  
+            border: 1px solid #888;  
+            width: 80%; /* 宽度可以是 80% */  
+        }  
+  
+        /* 关闭按钮的样式 */  
+        .close {  
+            color: #aaa;  
+            float: right;  
+            font-size: 28px;  
+            font-weight: bold;  
+            cursor: pointer;  
+        }  
+  
+        .close:hover,  
+        .close:focus {  
+            color: black;  
+            text-decoration: none;  
+            cursor: pointer;  
+        }  
+        
+        
+        /* 自定义模态弹窗的样式 */  
+    .modal1 {  
+        display: none;  
+        position: fixed;  
+        z-index: 1;  
+        left: 0;  
+        top: 0;  
+        width: 100%;  
+        height: 100%;  
+        overflow: auto;  
+        background-color: rgba(0, 0, 0, 0.4);  
+    }  
+  
+    .modal1-content {  
+        background-color: #fefefe;  
+        margin: 15% auto;  
+        padding: 20px;  
+        border: 1px solid #888;  
+        width: 80%;  
+    }  
+  
+    .close1 {  
+        color: #aaa;  
+        float: right;  
+        font-size: 28px;  
+        font-weight: bold;  
+        cursor: pointer;  
+    }  
+  
+    .close1:hover,  
+    .close1:focus {  
+        color: black;  
+        text-decoration: none;  
+        cursor: pointer;  
+    } 
+    
+    
+    </style>  
+</head>  
+<body>  
+  
+<button onclick="showModal()">故事线2</button>  
+
+
+
+  
+<!-- 模态弹窗的结构 -->  
+<div id="myModal" class="modal">  
+    <div class="modal-content">  
+        <span class="close" onclick="closeModal()">&times;</span>  
+        <p>你好</p>  
+        <button onclick="redirectToTryPage()">跳转</button>  
+    </div>  
+</div>  
+
+<!-- 模态弹窗的结构 -->  
+<div id="myModal1" class="modal1">  
+    <div class="modal1-content">  
+        <span class="close1" onclick="closeModal1()">&times;</span>  
+        <p>请继续接下来您的操作</p>  
+        <button onclick="confirmAction1()">继续思考</button>  
+        <button onclick="cancelAction1()">寻找兔子</button>  
+    </div>  
+</div> 
+
+
+  
+<script>  
+    // 显示模态弹窗  
+    function showModal() {  
+        alert("你从一片黑暗中睁开双眼，发现自己处于一个完全陌生的环境。"); // 首先显示一个简单的alert弹窗  
+        alert("陌生的地方，陌生的人，");
+        alert("甚至——");
+        alert("陌生的自己。");
+        alert("你迷茫地低头看了看自己苍老的双手，决定前去问问前面的人。");
+        alert("医院走廊里空空荡荡，四下无人，");
+        alert("你缓缓前进，希望可以遇到能帮助我的人。");
+        alert("走了好一会儿，终于看见前方有个人影。");
+        alert("你上前去问，还没开口，那人就已经转身面向你，");
+        alert("他直接把病历放进我怀里，然后顺势推了推眼镜，");
+        
+        alert("他说：\n“你的药护士已经帮你拿了，在护士站，”");
+        alert("“你要自己去拿一下，\n记得按着病历上的医嘱吃药，”");
+        alert("“一定要记得。”");
+        alert("顺着那只推眼镜的手，\n你看到了他的脸。");
+        alert("他，是一只兔子？！");
+        alert("你怔怔地看着眼前的医生，\n这个医生……还是只穿着黑西装的兔子？");
+        alert("兔子先生是我的主治医生还是……");
+        alert("思考间兔子先生已经转身离开了，\n再去找的时候，已没了身影，");
+        alert("整个走廊也都是空空如也，\n也没有兔子。");
+        
+        showCustomModal1(); // 用户点击OK后显示自定义模态弹窗  
+    }  
+  
+    // 显示自定义模态弹窗  
+    function showCustomModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "block"; // 显示模态弹窗  
+    }  
+  
+    // 隐藏自定义模态弹窗  
+    function closeModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "none"; // 隐藏模态弹窗  
+    }  
+  
+    // 确认操作  
+    function confirmAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+        alert('“幻觉吗？”\n你只能这么想。'); 
+        alert('随即你翻开病历查看。');
+        
+        // 在这里执行确认后的操作  
+        window.location.href = '2.2病历.html'; // 跳转到c页面
+    }  
+  
+    // 取消操作  
+    function cancelAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+         alert('前方的区域以后再来探索吧'); 
+         window.location.href = '2.2.1支线.html';
+        // 在这里执行取消后的操作  
+    }  
+  
+    // 获取窗口点击事件，用于处理点击模态弹窗外部区域时关闭弹窗的逻辑  
+    window.onclick = function(event) {  
+        if (event.target == document.getElementById("myModal1")) {  
+            closeModal1();  
+        }  
+    };  
+  
+    // 为了防止点击模态弹窗内部时关闭弹窗，需要阻止事件冒泡到window对象  
+    document.getElementById("myModal1").onclick = function(event) {  
+        event.stopPropagation();  
+    }  
+  
+    // 为关闭按钮（如果有的话）添加点击事件监听器  
+    var span1 = document.getElementsByClassName("close1")[0];  
+    span1.onclick = function() {  
+        closeModal1();  
+    }  
+</script>  
+  
+</body>  
+</html>

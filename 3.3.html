@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>3.3雨伞</title>  
+    <style>  
+        body, html {  
+            height: 100%;  
+            margin: 0;  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+            justify-content: center;  
+            background-color: #f0f0f0;  
+        }  
+  
+        .text-container {  
+            position: relative;  
+            opacity: 0;  
+            transition: opacity 1s ease-in-out;  
+            text-align: center;  
+            margin-bottom: 20px; /* 间距 */  
+            opacity: 0;  
+            transition: opacity 1s ease-in-out; 
+        }  
+  
+        .text-container.show {  
+            opacity: 1;  
+        }  
+        
+  
+        /* 第一个div的样式（如果需要的话） */  
+        #div1 {  
+            /* 可以添加额外的样式 */  
+        }  
+  
+        /* 第二个div的样式（如果需要的话） */  
+        #div2 {  
+            /* 可以添加额外的样式 */  
+        } 
+        
+        /* 模态弹窗的样式 */  
+        .modal {  
+            display: none; /* 默认隐藏 */  
+            position: fixed; /* 固定在屏幕上 */  
+            z-index: 1; /* 始终在最上层 */  
+            left: 0;  
+            top: 0;  
+            width: 100%; /* 全屏宽度 */  
+            height: 100%; /* 全屏高度 */  
+            overflow: auto; /* 允许滚动 */  
+            background-color: rgba(0,0,0,0.4); /* 黑色背景，半透明 */  
+        }  
+  
+        /* 模态弹窗内容 */  
+        .modal-content {  
+            background-color: #fefefe;  
+            margin: 15% auto; /* 15% 从顶部开始，水平居中 */  
+            padding: 20px;  
+            border: 1px solid #888;  
+            width: 80%; /* 宽度可以是 80% */  
+        }  
+  
+        /* 关闭按钮的样式 */  
+        .close {  
+            color: #aaa;  
+            float: right;  
+            font-size: 28px;  
+            font-weight: bold;  
+            cursor: pointer;  
+        }  
+  
+        .close:hover,  
+        .close:focus {  
+            color: black;  
+            text-decoration: none;  
+            cursor: pointer;  
+        }  
+        
+        
+        /* 自定义模态弹窗的样式 */  
+    .modal1 {  
+        display: none;  
+        position: fixed;  
+        z-index: 1;  
+        left: 0;  
+        top: 0;  
+        width: 100%;  
+        height: 100%;  
+        overflow: auto;  
+        background-color: rgba(0, 0, 0, 0.4);  
+    }  
+  
+    .modal1-content {  
+        background-color: #fefefe;  
+        margin: 15% auto;  
+        padding: 20px;  
+        border: 1px solid #888;  
+        width: 80%;  
+    }  
+  
+    .close1 {  
+        color: #aaa;  
+        float: right;  
+        font-size: 28px;  
+        font-weight: bold;  
+        cursor: pointer;  
+    }  
+  
+    .close1:hover,  
+    .close1:focus {  
+        color: black;  
+        text-decoration: none;  
+        cursor: pointer;  
+    } 
+     
+    </style>  
+</head>  
+<body> 
+	
+	<!-- 模态弹窗的结构 -->  
+<div id="myModal1" class="modal1">  
+    <div class="modal1-content">  
+        <span class="close1" onclick="closeModal1()">&times;</span>  
+        <p>第三个故事结束啦，要继续接下来的剧情吗？</p>  
+        <button onclick="confirmAction1()">继续</button>  
+        <button onclick="cancelAction1()">返回目录</button>  
+    </div>  
+</div> 
+
+  
+<!-- 创建两个用于显示文本的div -->  
+<div class="text-container" id="div1">你在便利店门口挂伞处叼了一把伞。</div>  
+<div class="text-container" id="div2">“真奇怪，大白天的，街上一家店都没开，可能下雨了都在睡懒觉吧！</div>
+<div class="text-container" id="div3">主人主人，我的主人虽然健忘，但肯定不会睡懒觉的！”</div>  
+<div class="text-container" id="div4">你叼着伞回到原本的地方坐下，静静的等着主人的到来。</div>
+<div class="text-container" id="div5">你眯着眼，不远处脚步声音慢慢靠近</div>  
+<div class="text-container" id="div6">——主人！你激动的坐起来向脚步声方向叫了一声，</div>
+<div class="text-container" id="div7">那个身影穿过了雨雾慢慢显现出来——我的主人。</div>  
+<div class="text-container" id="div8">出现在你面前的就是你的主人，</div>
+<div class="text-container" id="div9">虽然他好像和之前不太一样了，满头白发的，</div>  
+<div class="text-container" id="div10">但是你知道，那就是你的主人！</div>
+<div class="text-container" id="div11">他抚摸了你，注意到地上被你叼过来的伞，嘴角止不住的笑，打开伞对你说：“德克，快跟上。”</div>  
+<div class="text-container" id="div12">感觉有了依靠一样，你能毫不犹豫的跟着他向前走。</div>
+<div class="text-container" id="div13">不久，主人停了下来，望着不远处被迷雾包围的巨大建筑，你也乖乖的守在主人身边。</div>  
+<div class="text-container" id="div14">雨已停下，夕阳已至。迷雾散去，那巨大建筑也渐渐显现出原型。</div>
+<div class="text-container" id="div15">主人好像在等一个人，他就站在那个建筑门口，好像在等谁。</div>  
+<div class="text-container" id="div16">夕阳落下，光洒在他的白发上。</div>
+<div class="text-container" id="div17">这时，门口出现了一个人......</div>
+<div class="text-container" id="div18">怎么，有两个主人？</div>
+<script>  
+    // 获取两个div的引用  
+    var div1 = document.getElementById('div1');  
+    var div2 = document.getElementById('div2');  
+    var div3 = document.getElementById('div3');  
+    var div4 = document.getElementById('div4');
+    var div5 = document.getElementById('div5');  
+    var div6 = document.getElementById('div6');
+    var div7 = document.getElementById('div7');
+    var div8 = document.getElementById('div8');  
+    var div9 = document.getElementById('div9');  
+    var div10 = document.getElementById('div10');  
+    var div11 = document.getElementById('div11');
+    var div12 = document.getElementById('div12');  
+    var div13 = document.getElementById('div13');
+    var div14 = document.getElementById('div14');
+    var div15 = document.getElementById('div15');  
+    var div16 = document.getElementById('div16');
+    var div17 = document.getElementById('div17');
+    var div18 = document.getElementById('div18');
+    var isClicked = false; // 用来标记是否点击过  
+    
+    
+
+  
+  
+  
+    // 为整个文档添加点击事件监听器  
+    document.addEventListener('click', function(event) {  
+        // 如果已经点击过，则不再处理点击事件  
+        if (isClicked) return;  
+  
+        // 显示第一个div  
+        div1.classList.add('show');  
+  
+        // 延迟一段时间后显示第二个div  
+        setTimeout(function() {  
+            div2.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 500);
+        
+        setTimeout(function() {
+            div3.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 1000); 
+         setTimeout(function() {  
+            div4.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 1500);   
+        
+        setTimeout(function() {
+            div5.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 2000);  setTimeout(function() {  
+            div6.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 2500);   
+        
+        setTimeout(function() {
+            div7.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 3000); 
+         setTimeout(function() {  
+            div8.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 3500);   
+        
+        setTimeout(function() {
+            div9.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 4000); 
+         setTimeout(function() {  
+            div10.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 4500);   
+        
+        setTimeout(function() {
+            div11.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 5000);  setTimeout(function() {  
+            div12.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 5500);   
+        
+        setTimeout(function() {
+            div13.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 6000); 
+         setTimeout(function() {  
+            div14.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 6500);   
+        
+        setTimeout(function() {
+            div15.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 7000); 
+         setTimeout(function() {  
+            div16.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 7500);   
+        
+        setTimeout(function() {
+            div17.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 8000); 
+         setTimeout(function() {
+            div18.classList.add('show');  
+            // 标记为已点击，后续不再处理点击事件  
+            isClicked = true;  
+        }, 8500); 
+    });  
+    
+    var clickCount = 0; // 记录点击次数  
+    var textElement = document.getElementById('text'); // 获取文字元素的引用  
+  
+    document.addEventListener('click', function(event) {  
+        clickCount++; // 每次点击，点击次数加1  
+  
+        if (clickCount === 1) {  
+            // 如果是第一次点击，显示文字  
+            textElement.classList.remove('text-container');  
+            
+        } else if (clickCount === 2) {  
+            // 如果是第二次点击，跳转到b页面  
+           showCustomModal1(); // 用户点击OK后显示自定义模态弹窗  
+  
+            // 清除点击次数，以便后续再次尝试（如果需要）  
+            clickCount = 0;  
+        }  
+    }); 
+    
+    // 显示自定义模态弹窗  
+    function showCustomModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "block"; // 显示模态弹窗  
+    }  
+  
+    // 隐藏自定义模态弹窗  
+    function closeModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "none"; // 隐藏模态弹窗  
+    }  
+  
+    // 确认操作  
+    function confirmAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+        window.location.href = '终章.html'; // 跳转到c页面
+          
+    }  
+  
+    // 取消操作  
+    function cancelAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+         
+         
+        // 在这里执行取消后的操作  
+    }  
+  
+    // 获取窗口点击事件，用于处理点击模态弹窗外部区域时关闭弹窗的逻辑  
+    window.onclick = function(event) {  
+        if (event.target == document.getElementById("myModal1")) {  
+            closeModal1();  
+        }  
+    };  
+  
+    // 为了防止点击模态弹窗内部时关闭弹窗，需要阻止事件冒泡到window对象  
+    document.getElementById("myModal1").onclick = function(event) {  
+        event.stopPropagation();  
+    }  
+  
+    // 为关闭按钮（如果有的话）添加点击事件监听器  
+    var span1 = document.getElementsByClassName("close1")[0];  
+    span1.onclick = function() {  
+        closeModal1();  
+    }  
+    
+</script>  
+</body>  
+</html>

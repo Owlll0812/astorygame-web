@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2.4出发</title>
+		
+		<style>  
+			body {
+            background-color: rgb(255, 250, 250);
+        }
+        /* 模态弹窗的样式 */  
+        .modal {  
+            display: none; /* 默认隐藏 */  
+            position: fixed; /* 固定在屏幕上 */  
+            z-index: 1; /* 始终在最上层 */  
+            left: 0;  
+            top: 0;  
+            width: 100%; /* 全屏宽度 */  
+            height: 100%; /* 全屏高度 */  
+            overflow: auto; /* 允许滚动 */  
+            background-color: rgba(0,0,0,0.4); /* 黑色背景，半透明 */  
+        }  
+  
+        /* 模态弹窗内容 */  
+        .modal-content {  
+            background-color: #fefefe;  
+            margin: 15% auto; /* 15% 从顶部开始，水平居中 */  
+            padding: 20px;  
+            border: 1px solid #888;  
+            width: 80%; /* 宽度可以是 80% */  
+        }  
+  
+        /* 关闭按钮的样式 */  
+        .close {  
+            color: #aaa;  
+            float: right;  
+            font-size: 28px;  
+            font-weight: bold;  
+            cursor: pointer;  
+        }  
+  
+        .close:hover,  
+        .close:focus {  
+            color: black;  
+            text-decoration: none;  
+            cursor: pointer;  
+        }  
+        
+        
+        /* 自定义模态弹窗的样式 */  
+    .modal1 {  
+        display: none;  
+        position: fixed;  
+        z-index: 1;  
+        left: 0;  
+        top: 0;  
+        width: 100%;  
+        height: 100%;  
+        overflow: auto;  
+        background-color: rgba(0, 0, 0, 0.4);  
+    }  
+  
+    .modal1-content {  
+        background-color: #fefefe;  
+        margin: 15% auto;  
+        padding: 20px;  
+        border: 1px solid #888;  
+        width: 80%;  
+    }  
+  
+    .close1 {  
+        color: #aaa;  
+        float: right;  
+        font-size: 28px;  
+        font-weight: bold;  
+        cursor: pointer;  
+    }  
+  
+    .close1:hover,  
+    .close1:focus {  
+        color: black;  
+        text-decoration: none;  
+        cursor: pointer;  
+    } 
+    
+    
+    </style> 
+    
+    
+	</head>
+	<body>
+		
+		<button id="dianwo" onclick="showModal()">点我</button>
+		
+		<div id="myModal1" class="modal1">  
+    <div class="modal1-content">  
+        <span class="close1" onclick="closeModal1()">&times;</span>  
+        <p>第二个故事已经看完啦！需要继续接下来的故事吗？</p>  
+        <button onclick="confirmAction1()">继续故事</button>  
+        <button onclick="cancelAction1()">返回目录</button>  
+    </div>  
+</div> 
+
+		<script>
+			function showModal() {  
+    	alert('你推开病历上的那间病房房门，');
+       alert('映入眼帘的却是一间……书房？'); 
+       alert('一间书房。');
+       alert('房间内陈列着一系列青少年读物——看起来这是某个孩子的房间，');
+       alert('书桌上有一本习题册。');
+       alert('一种强烈的感觉迫使你坐下来解开了习题册里对你而言那些并不难的题目。');
+       alert('<游戏：找规律>');
+       var userName,timu2,timu3;  
+			do {  
+				userName = prompt('红=1 紫=7\n黄=？蓝=？（提示：彩虹）');  
+				if (userName === null) break; // 如果用户取消，退出循环  
+				timu2 = prompt('红=6 紫=12\n黄=？蓝=？（提示：笔画）');  
+				if (timu2 === null) break;
+				timu3 = prompt('红1=H 紫2=I\n黄3=？蓝3=？（提示：拼音）');  
+				if (timu3 === null) break;
+				  
+				
+				// 用户名或密码不正确时继续循环  
+			} while (userName !== "36" || timu2 !== "1113"  || timu3 !== "an");  
+			  
+			// 如果循环结束（即用户名和密码正确或用户取消），则显示相应的消息  
+			if (userName === "36"&& timu2 === "1113"&& timu3 === "an") {
+				alert('完成这题目的瞬间，\n恍惚间你看到了一个孩童在这间书房学习做作业的场景。'); 
+				alert('孩童消失了，书桌前，一封邮件正正的摆放在上，'); 
+				alert('收件人正是你的名字。'); 
+				alert('打开这封信，\n映入眼帘的是一张大学的录取通知书。'); 
+				alert('在你碰到通知书的一瞬间，\n眼前如万花筒一般看到了许许多多的景象：'); 
+				alert('拿着录取通知书的青葱少年，正青春洋溢地走进大学的校园；'); 
+				alert('眨眼间少年又变成了婚礼上走向婚姻殿堂的青年，正牵着妻子的手在神父面前许诺；'); 
+				alert('一瞬间又已变成了暮暮晚年，躺在医院的病床上正盯着手中的病历发呆……'); 
+				alert('……'); 
+				alert('……'); 
+				alert('眼前的场景又变回了开头医院，手里的通知书又变回了那张病历。'); 
+				alert('你突然发现手中的病历、眼前的医院\n和刚刚幻觉中老人待的医院和手中的病历是如此的相似……'); 
+				alert('恍然间，记忆如潮水般涌回，\n你发现你眼前所见到的儿时到老年的一生，就是自己的一生。'); 
+				alert('……'); 
+				var ren;  
+			do {  
+				ren = prompt('问题：什么东西早晨四条腿，中午两条腿，晚上三条腿');  
+				if (ren === null) break; // 如果用户取消，退出循环  
+				  
+				
+				// 用户名或密码不正确时继续循环  
+			} while (ren !== "人" );  
+			  
+			// 如果循环结束（即用户名和密码正确或用户取消），则显示相应的消息  
+			if (ren === "人") {  
+				alert('在被如此大量的信息冲刷大脑过后，你轻轻叹了口气。');  
+				alert('老人啊老人，在少年时这是如此遥远又是令人心生敬意的词汇啊；');  
+				alert('一生，这又是多么漫长而又令人慨叹不绝的话语啊。');  
+				alert('转眼如今自己已为暮年，又于此找回了自己的一生。');  
+				alert('回顾过往，如此平凡，');  
+				alert('你念了很多年书，也去到一些地方，看过波澜壮阔的星空，也吃过尤其美味的美食；');  
+				alert('你曾有的一些渺小心愿，也在偷偷为它们努力着——读书、工作、结婚生子。');  
+				alert('直到今天……');  
+				alert('如今暮暮之年回望过去，只当是站在三岔路口，眼见风云千樯，');  
+				alert('作出抉择的那一日，在日记上，相当沉闷和平凡，当时还以为是生命中普通的一天。');  
+				alert('此时此刻，你想起了几十年前课本里的一句诗：行到穷水处，坐看云起时。');  
+				alert('……'); 
+				alert('……');
+				alert('你笑了笑，收起那份病历，走出了医院——');  
+				alert('你明白，现在你要去找一个人，他就在那儿。');  
+				alert('你漫步穿梭在熟悉的一条条小巷，人烟还在，却空无一人，只有雨声空灵在这片世界。');  
+				alert('一声犬吠打破了这嫌隙的雨声，');  
+				alert('在你面前的不远处，有只熟悉的身影藏在这雨雾中，');  
+				alert('它就趴在那儿，一看到你，它便直起身子使劲摇了摇尾巴。');  
+				alert('你上前抚摸了一下它的头，发现在它脚边有一把伞，伞柄上还有轻微的咬痕。'); 
+				alert('你叫了一声德克，它的尾巴摇的更欢了。');
+				alert('你接过狗狗的雨伞，和它说了一句:“德克，快跟上。”'); 
+				alert('打开伞，便又继续向前了。');
+				alert('无声的，慢慢的走，面前就是目的地了，'); 
+				alert('你曾进去过这里——追悼会，追悼自己的青春。');
+				alert('……'); 
+				alert('……');
+				
+				
+				showCustomModal1(); // 跳转到c页面
+			} else {  
+				alert('答案是“人”啊。'); 
+				alert('再来一次吧。'); 
+			}
+				
+			} else {  
+				alert('好像不对呢。');  
+			}
+			
+			
+    };
+    
+    // 显示自定义模态弹窗  
+    function showCustomModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "block"; // 显示模态弹窗  
+    }  
+  
+    // 隐藏自定义模态弹窗  
+    function closeModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "none"; // 隐藏模态弹窗  
+    }  
+  
+    // 确认操作  
+    function confirmAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+        window.location.href = '3.1.html'; // 跳转到c页面
+          
+    }  
+  
+    // 取消操作  
+    function cancelAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+         window.location.href = '目录页面.html'; // 跳转到c页面
+         
+        // 在这里执行取消后的操作  
+    }  
+  
+    // 获取窗口点击事件，用于处理点击模态弹窗外部区域时关闭弹窗的逻辑  
+    window.onclick = function(event) {  
+        if (event.target == document.getElementById("myModal1")) {  
+            closeModal1();  
+        }  
+    };  
+  
+    // 为了防止点击模态弹窗内部时关闭弹窗，需要阻止事件冒泡到window对象  
+    document.getElementById("myModal1").onclick = function(event) {  
+        event.stopPropagation();  
+    }  
+  
+    // 为关闭按钮（如果有的话）添加点击事件监听器  
+    var span1 = document.getElementsByClassName("close1")[0];  
+    span1.onclick = function() {  
+        closeModal1();  
+    }
+		</script>
+	</body>
+</html>

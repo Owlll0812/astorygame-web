@@ -1,0 +1,105 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Modal Example</title>  
+<style>  
+/* 模态弹窗的样式 */  
+.modal {  
+  display: none; /* 默认隐藏 */  
+  position: fixed; /* Stay in place */  
+  z-index: 1; /* Sit on top */  
+  padding-top: 100px; /* Location of the box */  
+  left: 0;  
+  top: 0;  
+  width: 100%; /* Full width */  
+  height: 100%; /* Full height */  
+  overflow: auto; /* Enable scroll if needed */  
+  background-color: rgb(0,0,0); /* Fallback color */  
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */  
+}  
+  
+/* Modal Content */  
+.modal-content {  
+  background-color: #fefefe;  
+  margin: auto;  
+  padding: 20px;  
+  border: 1px solid #888;  
+  width: 80%;  
+}  
+  
+/* The Close Button */  
+.close {  
+  color: #aaaaaa;  
+  float: right;  
+  font-size: 28px;  
+  font-weight: bold;  
+}  
+  
+.close:hover,  
+.close:focus {  
+  color: #000;  
+  text-decoration: none;  
+  cursor: pointer;  
+}  
+</style>  
+</head>  
+<body>  
+  
+<!-- 模态弹窗的结构 -->  
+<div id="myModal" class="modal">  
+  <div class="modal-content">  
+    <span class="close">&times;</span>  
+    <p>猜猜我是谁！</p>  
+  </div>  
+</div>  
+  
+<!-- 触发模态弹窗的按钮 -->  
+<button id="showModalBtn">显示模态弹窗</button>  
+  
+<script>  
+// 获取元素  
+var modal = document.getElementById("myModal");  
+var btn = document.getElementById("showModalBtn");  
+var span = document.getElementsByClassName("close")[0];  
+  
+// 显示模态弹窗的函数  
+function showModal() {  
+  modal.style.display = "block";  
+}  
+  
+// 隐藏模态弹窗的函数  
+function hideModal() {  
+  modal.style.display = "none";  
+}  
+  
+// 当点击“显示模态弹窗”按钮时  
+btn.onclick = function() {  
+  // 假设我们有一个条件变量，这里用Math.random()模拟  
+  var condition = Math.random() > 0.5;  
+    
+  // 如果条件满足，则显示模态弹窗  
+  if (condition) {  
+    showModal();  
+  } else {  
+    // 如果条件不满足，可以执行其他操作或什么都不做  
+    console.log("条件不满足，不显示模态弹窗");  
+  }  
+};  
+  
+// 当点击<span> (x), 关闭模态弹窗  
+span.onclick = function() {  
+  hideModal();  
+}  
+  
+// 当点击模态弹窗以外的区域时，关闭模态弹窗  
+window.onclick = function(event) {  
+  if (event.target == modal) {  
+    hideModal();  
+  }  
+}  
+</script>  
+  
+</body>  
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Confirm Example</title>  
+<style>  
+    /* 样式代码 */  
+    body, html {  
+        height: 100%;  
+        margin: 0;  
+        display: flex;  
+        justify-content: center; /* 水平居中 */  
+        align-items: center; /* 垂直居中 */  
+        background-color:  rgb(39, 35, 35); /* 可以添加背景色，使文字更突出 */  
+    }  
+  
+    .center-container {  
+        display: flex;  
+        flex-direction: column; /* 设置容器方向为列 */  
+        align-items: center; /* 垂直居中（对于列布局，这通常不是必需的，但保持一致性） */  
+    }  
+  
+    .hover-text {  
+    	color: white;
+        text-align: center; /* 确保文本在容器内居中（对于多行文本） */  
+        font-size: 30px; /* 设置字体大小 */  
+        cursor: pointer; /* 鼠标悬停时显示为小手图标 */  
+        padding: 10px; /* 添加一些内边距 */  
+        margin-bottom: 10px; /* 添加下边距，使按钮之间有间隔 */  
+    }  
+    .hover-text {  
+    /* 初始状态没有边框 */  
+    border: 0 solid #FFFFFF; /* 边框宽度为0，颜色为你想要的最终颜色 */  
+    padding: 20px;  
+    transition: border-width 0.5s ease, border-color 0.5s ease; /* 同时设置边框宽度和颜色的过渡效果 */  
+    /* 其他样式可以根据需要添加 */  
+}  
+  
+.hover-text:hover {  
+    /* 鼠标悬浮时，边框宽度变为2px，颜色已经是蓝色（因为初始就设置了） */  
+    border-width: 2px;  
+}  
+  
+    .hover-text:last-child {  
+        margin-bottom: 0; /* 移除最后一个按钮的下边距 */  
+    }  
+    
+    .mulu {
+    	
+    	color: white;
+    	font-size: 70px;
+    }
+    
+</style>  
+</head>  
+<body>  
+  
+<div class="center-container">  
+	<div class="mulu">目录</div>
+    <div class="hover-text" onclick="confirmNavigation('故事1.html')">故事线1</div>  
+    <div class="hover-text" onclick="confirmNavigation('故事2.html')">故事线2</div> 
+    <div class="hover-text" onclick="confirmNavigation('故事3.html')">故事线3</div>
+    <div class="hover-text" onclick="confirmNavigation('终章.html')">终章</div>
+    <div class="hover-text" onclick="confirmNavigation('鸡汤文学.html')">鸡汤文学</div>
+</div>  
+  
+<script>  
+// JavaScript函数  
+function confirmNavigation(url) {  
+    if (confirm("是否进入" + url + "页面？")) {  
+        // 如果用户点击确定  
+        window.location.href = url; // 跳转到指定页面  
+    } else {  
+        // 如果用户点击取消  
+        // 这里可以什么都不做，因为默认就是留在当前页面  
+    }  
+}  
+</script>  
+  
+</body>  
+</html>

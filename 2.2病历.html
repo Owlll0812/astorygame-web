@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>2.2病历</title>
+		<link rel="stylesheet" href="css/new_file.css" />
+		<!--<script type="text/javascript" src="js/new_file.js" ></script>-->
+		
+		<style>  
+			body {
+            background-color: rgb(255, 250, 250);
+        }
+        /* 模态弹窗的样式 */  
+        .modal {  
+            display: none; /* 默认隐藏 */  
+            position: fixed; /* 固定在屏幕上 */  
+            z-index: 1; /* 始终在最上层 */  
+            left: 0;  
+            top: 0;  
+            width: 100%; /* 全屏宽度 */  
+            height: 100%; /* 全屏高度 */  
+            overflow: auto; /* 允许滚动 */  
+            background-color: rgba(0,0,0,0.4); /* 黑色背景，半透明 */  
+        }  
+  
+        /* 模态弹窗内容 */  
+        .modal-content {  
+            background-color: #fefefe;  
+            margin: 15% auto; /* 15% 从顶部开始，水平居中 */  
+            padding: 20px;  
+            border: 1px solid #888;  
+            width: 80%; /* 宽度可以是 80% */  
+        }  
+  
+        /* 关闭按钮的样式 */  
+        .close {  
+            color: #aaa;  
+            float: right;  
+            font-size: 28px;  
+            font-weight: bold;  
+            cursor: pointer;  
+        }  
+  
+        .close:hover,  
+        .close:focus {  
+            color: black;  
+            text-decoration: none;  
+            cursor: pointer;  
+        }  
+        
+        
+        /* 自定义模态弹窗的样式 */  
+    .modal1 {  
+        display: none;  
+        position: fixed;  
+        z-index: 1;  
+        left: 0;  
+        top: 0;  
+        width: 100%;  
+        height: 100%;  
+        overflow: auto;  
+        background-color: rgba(0, 0, 0, 0.4);  
+    }  
+  
+    .modal1-content {  
+        background-color: #fefefe;  
+        margin: 15% auto;  
+        padding: 20px;  
+        border: 1px solid #888;  
+        width: 80%;  
+    }  
+  
+    .close1 {  
+        color: #aaa;  
+        float: right;  
+        font-size: 28px;  
+        font-weight: bold;  
+        cursor: pointer;  
+    }  
+  
+    .close1:hover,  
+    .close1:focus {  
+        color: black;  
+        text-decoration: none;  
+        cursor: pointer;  
+    } 
+    
+    
+    </style> 
+    
+    
+	</head>
+
+	<body>
+		<button onclick="showModal()">点我</button>
+		
+		<!-- 模态弹窗的结构 -->  
+<div id="myModal1" class="modal1">  
+    <div class="modal1-content">  
+        <span class="close1" onclick="closeModal1()">&times;</span>  
+        <p>我看完病历啦</p>  
+        <button onclick="confirmAction1()">是的</button>  
+        <button onclick="cancelAction1()">还没有</button>  
+    </div>  
+</div> 
+
+		<center>
+			<div class="headsteam" id="GROUPNAME">
+				<div class="headsteam-img">
+					<div>
+						<img src="https://i.ibb.co/4SynBjP/WithAHea.png">
+					</div>
+				</div>
+				<div class="headsteam-avatar">
+					<div>
+						<img src="https://i.ibb.co/PQGVfdF/Kerrrrry.png">
+					</div>
+				</div>
+				<div class="headsteam-name">
+					<div><个人住院病历单></div>
+					W博士<br>
+					<h1>C市 <b>高级私人大型医院</b></h1>
+				</div>
+				<div class="headsteam-bulk">
+					<div class="headsteam-left">
+						<div class="headsteam-left-1">
+							<i class="th th-quote-up"></i>
+							<div>
+								所在病房号：xxx室 病史陈述者：病史由患者本人及家属叙述
+							</div>
+						</div>
+						<div class="headsteam-left-3">
+							<div><i class="th th-chat-bubble"></i>
+								<h1>NICKNAME(S)</h1>W博士</div>
+							<div><i class="th th-cake-2"></i>
+								<h1>AGE</h1>70岁</div>
+							<div><i class="th th-calendar-1"></i>
+								<h1>GENDER</h1>男</div>
+							<div><i class="th th-bubble-heart"></i>
+								<h1>DATE OF BIRT</h1>JC320年3月29日</div>
+							<div><i class="th th-cherry"></i>
+								<h1>ETHIC GROUP</h1>汉族</div>
+							<div><i class="th th-heart-1"></i>
+								<h1>MATRIMONY</h1>已婚</div>
+							<div><i class="th th-briefcase"></i>
+								<h1>Place of birth</h1>C市</div>
+							<div><i class="th th-crystal-ball"></i>
+								<h1>医师签名</h1>Y医生</div>
+						</div>
+					</div>
+					<div class="headsteam-right">
+						<input type="radio" id="headsteam-tab-1" name="headsteam-tab" checked>
+						<label for="headsteam-tab-1" title="PERSONALITY"><div><i class="th th-brain"></i></div></label>
+						<input type="radio" id="headsteam-tab-2" name="headsteam-tab">
+						<label for="headsteam-tab-2" title="MISCELLANEOUS" style="margin-top:-175px;"><div><i class="th th-id-card-1-o"></i></div></label>
+						<input type="radio" id="headsteam-tab-3" name="headsteam-tab">
+						<label for="headsteam-tab-3" title="BIOGRAPHY" style="margin-top:-120px;"><div><i class="th th-film-roll-o"></i></div></label>
+						<div class="headsteam-right-1">
+							<div class="headsteam-personality-title">病情详情</div>
+							<div class="headsteam-personality">
+								<div class="headsteam-personality-0">
+									<br>
+									<h1>现病史</h1>
+									<br> 患者于昨日因天气变化受凉后开始出现下腹部疼痛不适，呈持续性隐痛，喜蹲、喜按，按之疼痛减轻，伴有发热，最高体温达38.9℃，呈不规则热，无咳嗽、呕吐、腹泻等不适，在当地诊所输液治疗-天(具体用药不祥)，状无明显缓解，今患者及家属为求进一步系统治疗，随来我院住院治疗。
+									<br><br><b>起病以来，患者精神、食纳、睡眠差，小便正常，大便未解。</b><br><br>
+									<h1>既往史</h1><br>既往体质一般，曾有“肝内胆管结石”病史五年余，具体不详。无食物及药物过敏史，预防接种史不详。
+								</div>
+							</div>
+							<div style="display:none;">
+								<div class="headsteam-personality-1">
+									<div class="headsteam-personality-2">
+										<h1>系统查询</h1>
+										<div>
+											<span>呼吸系统：无慢性咳嗽、咳痰、咯血史，无明显气促及胸痛。</span>
+											<span>循环系统：偶有胸闷心悸，无其他明显症状。</span>
+											<span>消化系统：无异常</span>
+											<span>泌尿生殖系统：无异常</span>
+											<span>血液系统：无异常</span>
+											<span>代谢及内分泌系统：无异常</span>
+										</div>
+									</div>
+								</div>
+								<div style="margin:10px 0px;" class="headsteam-personality-title">PERSONALITY</div>
+							</div>
+							<div class="headsteam-personality-1">
+								<div class="headsteam-personality-2">
+									<h1>系统查询</h1>
+									<div>
+										<span><b>呼吸系统：</b>无慢性咳嗽、咳痰、咯血史，无明显气促及胸痛。</span>
+										<span><b>循环系统</b>：偶有胸闷心悸，无其他明显症状。</span>
+										<span><b>消化系统：</b>无异常</span>
+										<span><b>泌尿生殖系统：</b>无异常</span>
+										<span><b>血液系统：</b>无异常</span>
+										<span><b>代谢及内分泌系统：</b>无异常</span>
+									</div>
+								</div>
+								<div class="headsteam-personality-2">
+									<h1>病史摘要</h1>
+									<div style="height: 60px;">
+										<span>略</span>
+									</div>
+									<h1>初步诊断</h1>
+									<div style="height: 60px;">
+										<span>1.急性胃肠炎</span>
+										<span>2.肝内胆管结石</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="headsteam-bot">
+					<div>
+						<img src="https://i.ibb.co/4SynBjP/WithAHea.png">
+					</div>
+					<h1>
+						<span>病人 <b>W博士</b></span>
+						<span>主治医生<b>Y医生</b></span>
+						<span>C市 <b>高级私人大型医院</b></span>
+						<span>本院联系方式：<b>460-125896</b></span>
+					</h1>
+				</div>
+			</div>
+		</center>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,700,800' rel='stylesheet' type='text/css'>
+		<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+		
+		<script>  
+    // 显示模态弹窗  
+    function showModal() {  
+        alert("一股强烈的直觉指示你前去你所在的病房看看。"); // 首先显示一个简单的alert弹窗  
+        
+        
+        
+        showCustomModal1(); // 用户点击OK后显示自定义模态弹窗  
+    }  
+  
+    // 显示自定义模态弹窗  
+    function showCustomModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "block"; // 显示模态弹窗  
+    }  
+  
+    // 隐藏自定义模态弹窗  
+    function closeModal1() {  
+        var modal1 = document.getElementById("myModal1");  
+        modal1.style.display = "none"; // 隐藏模态弹窗  
+    }  
+  
+    // 确认操作  
+    function confirmAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+        alert('你环顾四周，发现病房号码为三位数。'); 
+        
+        
+        // 在这里执行确认后的操作  
+        window.location.href = '2.3按钮.html'; // 跳转到c页面
+    }  
+  
+    // 取消操作  
+    function cancelAction1() {  
+        closeModal1(); // 隐藏模态弹窗  
+         alert('那请继续看吧'); 
+         
+        // 在这里执行取消后的操作  
+    }  
+  
+    // 获取窗口点击事件，用于处理点击模态弹窗外部区域时关闭弹窗的逻辑  
+    window.onclick = function(event) {  
+        if (event.target == document.getElementById("myModal1")) {  
+            closeModal1();  
+        }  
+    };  
+  
+    // 为了防止点击模态弹窗内部时关闭弹窗，需要阻止事件冒泡到window对象  
+    document.getElementById("myModal1").onclick = function(event) {  
+        event.stopPropagation();  
+    }  
+  
+    // 为关闭按钮（如果有的话）添加点击事件监听器  
+    var span1 = document.getElementsByClassName("close1")[0];  
+    span1.onclick = function() {  
+        closeModal1();  
+    }  
+</script>
+		
+		
+	</body>
+</html>
